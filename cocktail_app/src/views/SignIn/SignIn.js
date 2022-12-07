@@ -5,7 +5,6 @@ import React, {useCallback, useMemo, useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {useSelector, useDispatch} from 'react-redux';
 import {addUsers} from '../../store/reducers/users';
-import {set} from 'immer/dist/internal';
 
 const SignIn = () => {
   const navigation = useNavigation();
@@ -14,11 +13,24 @@ const SignIn = () => {
   console.log(users);
   const dispatch = useDispatch();
 
+  const [login, setLogin] = useState({
+    Email: '',
+    Password: '',
+  });
+
   const [user, setUser] = useState({
     id: Math.random(),
     Email: '',
     Password: '',
   });
+
+  const validateUser = useCallback(() => {
+    users.map(u => {
+      if (login.Email == u.Email && login.Password == u.Password) {
+        navigation.navigate('Tabnav');
+      }
+    });
+  }, [navigation, users, login.Email, login.Password]);
 
   const validPassword = useMemo(() => {
     return user.Password.length >= 6;
@@ -27,9 +39,9 @@ const SignIn = () => {
   const validateForm = useCallback(() => {
     if (validPassword) {
       dispatch(addUsers(user));
-      navigation.navigate('Tabnav');
+      setIsAlreadyAnAccount(!isAlreadyAnAccount);
     }
-  }, [validPassword, navigation, dispatch, user]);
+  }, [validPassword, dispatch, user, isAlreadyAnAccount]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -37,56 +49,55 @@ const SignIn = () => {
         <>
           <Text style={styles.text}> Connexion </Text>
           <View style={styles.form}>
+            <Text style={styles.label}> Email </Text>
             <TextInput
-              value={user.Email}
-              onChangeText={value => setUser({...user, Email: value})}
+              value={login.Email}
+              onChangeText={value => setLogin({...login, Email: value})}
               style={styles.input}
             />
+            <Text style={styles.label}> Mot de passe </Text>
             <TextInput
-              value={user.Password}
-              onChangeText={value => setUser({...user, Password: value})}
+              value={login.Password}
+              onChangeText={value => setLogin({...login, Password: value})}
               secureTextEntry={true}
-              style={validPassword ? styles.input : styles.inputInvalid}
+              style={styles.input}
             />
-            {!validPassword ? (
-              <Text> Le mot de passe doit contenir au moins 6 charactères</Text>
-            ) : null}
           </View>
-          <TouchableOpacity style={styles.button} onPress={validateForm}>
+          <TouchableOpacity style={styles.button} onPress={validateUser}>
             <Text style={styles.buttonText}> Me connecter </Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.button}
-            onPress={() => setIsAlreadyAnAccount()}>
-            <Text style={styles.buttonText}> Je n'ai pas de compte </Text>
+            onPress={() => setIsAlreadyAnAccount(!isAlreadyAnAccount)}>
+            <Text style={styles.link}> Je n'ai pas de compte </Text>
           </TouchableOpacity>
         </>
       ) : (
         <>
           <Text style={styles.text}> Inscription </Text>
           <View style={styles.form}>
+            <Text style={styles.label}> Email </Text>
             <TextInput
               value={user.Email}
               onChangeText={value => setUser({...user, Email: value})}
               style={styles.input}
             />
+            <Text style={styles.label}> Mot de passe </Text>
             <TextInput
               value={user.Password}
               onChangeText={value => setUser({...user, Password: value})}
               secureTextEntry={true}
               style={validPassword ? styles.input : styles.inputInvalid}
             />
-            {!validPassword ? (
-              <Text> Le mot de passe doit contenir au moins 6 charactères</Text>
+            {!validPassword && !user.Password == 0 ? (
+              <Text> Au moins 6 charactères </Text>
             ) : null}
           </View>
           <TouchableOpacity style={styles.button} onPress={validateForm}>
             <Text style={styles.buttonText}> M'inscrire </Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.button}
-            onPress={() => setIsAlreadyAnAccount()}>
-            <Text style={styles.buttonText}> Je possède déjà un compte </Text>
+            onPress={() => setIsAlreadyAnAccount(!isAlreadyAnAccount)}>
+            <Text style={styles.link}> Je possède déjà un compte </Text>
           </TouchableOpacity>
         </>
       )}
