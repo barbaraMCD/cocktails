@@ -3,36 +3,44 @@ import styles from './SignIn.style';
 import {TextInput} from 'react-native-paper';
 import React, {useCallback, useMemo, useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
+import {useSelector, useDispatch} from 'react-redux';
+import {addUsers} from '../../store/reducers/users';
 
 const SignIn = () => {
   const navigation = useNavigation();
-  const [form, setForm] = useState({
+  const {users} = useSelector(state => state.users);
+  console.log(users);
+  const dispatch = useDispatch();
+
+  const [user, setUser] = useState({
+    id: Math.random(),
     Email: '',
     Password: '',
   });
 
   const validPassword = useMemo(() => {
-    return form.Password.length >= 6;
-  }, [form.Password]);
+    return user.Password.length >= 6;
+  }, [user.Password]);
 
   const validateForm = useCallback(() => {
     if (validPassword) {
+      dispatch(addUsers(user));
       navigation.navigate('Tabnav');
     }
-  }, [validPassword, navigation]);
+  }, [validPassword, navigation, dispatch, user]);
 
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.text}> Inscription </Text>
       <View style={styles.form}>
         <TextInput
-          value={form.Email}
-          onChangeText={value => setForm({...form, email: value})}
+          value={user.Email}
+          onChangeText={value => setUser({...user, Email: value})}
           style={styles.input}
         />
         <TextInput
-          value={form.Password}
-          onChangeText={value => setForm({...form, Password: value})}
+          value={user.Password}
+          onChangeText={value => setUser({...user, Password: value})}
           secureTextEntry={true}
           style={validPassword ? styles.input : styles.inputInvalid}
         />
