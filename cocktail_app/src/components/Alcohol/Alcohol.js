@@ -3,12 +3,8 @@ import styles from './Alcohol.style';
 import {useNavigation} from '@react-navigation/native';
 import {Image, Text, TouchableHighlight, View} from 'react-native';
 
-const Alcohol = ({img, title}) => {
+const Alcohol = ({img, title, goToCocktail}) => {
   const navigation = useNavigation();
-
-  const goToCocktail = useCallback(() => {
-    navigation.navigate('Liste de cocktails');
-  }, [navigation]);
 
   return (
     <View style={styles.typeOfAlcohol}>

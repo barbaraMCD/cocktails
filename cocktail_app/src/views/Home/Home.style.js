@@ -10,23 +10,10 @@ const styles = StyleSheet.create({
   },
   title: {
     textAlign: 'center',
-    marginTop: 30,
+    marginTop: 10,
   },
   row: {
     flexDirection: 'row',
-  },
-  typeOfAlcohol: {
-    alignItems: 'center',
-    marginTop: 40,
-    justifyContent: 'space-around',
-    shadowColor: '#171717',
-    height: 200,
-    shadowOffset: {width: -2, height: 4},
-    shadowOpacity: 0.2,
-  },
-  image: {
-    height: 100,
-    width: 100,
   },
 });
 
