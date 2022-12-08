@@ -16,9 +16,14 @@ const Cocktails = ({title, img}) => {
   }, []);
 
   return (
-    <View>
-      <Text> {data.str} </Text>
-      <Image src={img} />
+    <View style={styles.container}>
+      <Text style={styles.title}> {title} </Text>
+      <Image
+        style={styles.image}
+        source={{
+          uri: `${img}`,
+        }}
+      />
     </View>
   );
 };
