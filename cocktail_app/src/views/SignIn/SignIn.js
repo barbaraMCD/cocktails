@@ -10,7 +10,6 @@ const SignIn = () => {
   const navigation = useNavigation();
   const [isAlreadyAnAccount, setIsAlreadyAnAccount] = useState(false);
   const {users} = useSelector(state => state.users);
-  console.log(users);
   const dispatch = useDispatch();
 
   const [login, setLogin] = useState({

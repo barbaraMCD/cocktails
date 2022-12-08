@@ -1,20 +1,6 @@
-import {Dimensions, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-  column: {
-    width: Dimensions.get('window').width / 2,
-  },
-  title: {
-    textAlign: 'center',
-    marginTop: 30,
-  },
-  row: {
-    flexDirection: 'row',
-  },
   typeOfAlcohol: {
     alignItems: 'center',
     marginTop: 40,
