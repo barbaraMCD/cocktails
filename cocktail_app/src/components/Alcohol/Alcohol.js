@@ -7,7 +7,7 @@ const Alcohol = ({img, title}) => {
   const navigation = useNavigation();
 
   const goToCocktail = useCallback(() => {
-    navigation.navigate('Cocktails');
+    navigation.navigate('Liste de cocktails');
   }, [navigation]);
 
   return (
