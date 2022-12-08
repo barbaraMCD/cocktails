@@ -6,7 +6,12 @@ const Stack = createNativeStackNavigator();
 import Home from '../views/Home/Home';
 import TabNavigator from '../components/TabNavigator';
 import SignIn from '../views/SignIn/SignIn';
-import CocktailsView from '../views/CocktailView/CocktailView';
+import GinView from '../views/CocktailView/GinView';
+import VodkaView from '../views/CocktailView/VodkaView';
+import RhumView from '../views/CocktailView/RhumView';
+import WhiskyView from '../views/CocktailView/WhiskyView';
+import TequilaView from '../views/CocktailView/TequilaView';
+import CointreauView from '../views/CocktailView/CointreauView';
 
 const AppNavigator = () => {
   return (
@@ -26,7 +31,12 @@ const AppNavigator = () => {
         name="Home"
         component={Home}
       />
-      <Stack.Screen name="Liste de cocktails" component={CocktailsView} />
+      <Stack.Screen name="GinView" component={GinView} />
+      <Stack.Screen name="VodkaView" component={VodkaView} />
+      <Stack.Screen name="WhiskyView" component={WhiskyView} />
+      <Stack.Screen name="TequilaView" component={TequilaView} />
+      <Stack.Screen name="CointreauView" component={CointreauView} />
+      <Stack.Screen name="RhumView" component={RhumView} />
     </Stack.Navigator>
   );
 };

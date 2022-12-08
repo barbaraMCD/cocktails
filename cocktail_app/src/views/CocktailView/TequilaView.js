@@ -4,27 +4,27 @@ import Cocktails from '../../components/Cocktails/Cocktails';
 import {getCocktailsPerAlcool} from '../../helpers/api';
 import styles from './CocktailView.style';
 
-const CocktailsView = () => {
-  const [data, setData] = useState([]);
+const TequilaView = () => {
+  const [tequila, setTequila] = useState([]);
 
-  const loadData = async () => {
-    const res = await getCocktailsPerAlcool('gin');
-    setData(res.drinks);
+  const loadTequila = async () => {
+    const res = await getCocktailsPerAlcool('tequila');
+    setTequila(res.drinks);
   };
 
   useEffect(() => {
-    loadData();
+    loadTequila();
   }, []);
 
-  const cocktails = data.map((c, i) => {
+  const tequilaCocktails = tequila.map((c, i) => {
     return <Cocktails key={i} title={c.strDrink} img={c.strDrinkThumb} />;
   });
 
   return (
     <ScrollView style={styles.container}>
-      <View style={styles.list}>{cocktails}</View>
+      <View style={styles.list}>{tequilaCocktails}</View>
     </ScrollView>
   );
 };
 
-export default CocktailsView;
+export default TequilaView;

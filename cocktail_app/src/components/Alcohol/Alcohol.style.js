@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   typeOfAlcohol: {
     alignItems: 'center',
-    marginTop: 40,
+    marginTop: 10,
     justifyContent: 'space-around',
     shadowColor: '#171717',
     height: 200,
