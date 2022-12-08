@@ -1,16 +1,22 @@
-import * as React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import * as React from 'react'
+import {createNativeStackNavigator} from '@react-navigation/native-stack'
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator()
 
-import Home from '../views/Home/Home';
-import TabNavigator from '../components/TabNavigator';
-import SignIn from '../views/SignIn/SignIn';
-import Cocktails from './Cocktails/Cocktails';
+import Home from '../views/Home/Home'
+import TabNavigator from '../components/TabNavigator'
+import SignIn from '../views/SignIn/SignIn'
+import Cocktails from './Cocktails/Cocktails'
+import ReadMe from '../views/ReadMe/ReadMe'
 
 const AppNavigator = () => {
   return (
     <Stack.Navigator>
+      <Stack.Screen
+        options={{headerShown: false}}
+        name="Tabnav"
+        component={TabNavigator}
+      />
       <Stack.Screen
         options={{headerShown: false}}
         name="Home"
@@ -28,8 +34,8 @@ const AppNavigator = () => {
       />
       <Stack.Screen
         options={{headerShown: false}}
-        name="Tabnav"
-        component={TabNavigator}
+        name="ReadMe"
+        component={ReadMe}
       />
     </Stack.Navigator>
   );
