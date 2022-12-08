@@ -5,9 +5,9 @@ export const getCocktailsPerAlcool = async drink => {
   const data = await response.json();
   return data;
 };
-export const getRecipe = async drink => {
-  const url =
-    'https://thecocktaildb.com/api/json/v1/1/search.php?s=' + recipe;
+
+export const getRecipe = async recipe => {
+  const url = `https://thecocktaildb.com/api/json/v1/1/search.php?s=${recipe}`;
   const response = await fetch(url);
   const data = await response.json();
   return data;

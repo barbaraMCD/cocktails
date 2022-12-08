@@ -12,6 +12,7 @@ import RhumView from '../views/CocktailView/RhumView';
 import WhiskyView from '../views/CocktailView/WhiskyView';
 import TequilaView from '../views/CocktailView/TequilaView';
 import CointreauView from '../views/CocktailView/CointreauView';
+import Recipe from '../views/Recipe/Recipe';
 
 const AppNavigator = () => {
   return (
@@ -37,6 +38,7 @@ const AppNavigator = () => {
       <Stack.Screen name="TequilaView" component={TequilaView} />
       <Stack.Screen name="CointreauView" component={CointreauView} />
       <Stack.Screen name="RhumView" component={RhumView} />
+      <Stack.Screen name="Recipe" component={Recipe} />
     </Stack.Navigator>
   );
 };

@@ -1,28 +1,36 @@
 import React, {useEffect, useState} from 'react';
-import {Image, Text, View,TouchableHighlight} from 'react-native';
+import {Text, TouchableHighlight, View} from 'react-native';
+import {TextInput} from 'react-native-paper';
 import {getRecipe} from '../../helpers/api';
 import styles from './Recipe.styles';
 
-const Recipe = ({strInstructions, }) => {
+const Recipe = () => {
   const [data, setData] = useState([]);
+  console.log(data);
+
+  const [value, setValue] = useState([]);
 
   const loadData = async () => {
-    const res = await getRecipe();
-    setData(res.recipe);
+    const res = await getRecipe(value);
+    setData(res.drinks);
   };
 
-  useEffect(() => {
-    loadData();
-  }, []);
-  
+  // strDrink : recuperer le title (margarita)
+  // strInstructions : recuperer la recette
+  // strIngredient1, etc tous les ingrédients
+  // strDrinkThumb : image du cocktail
+
   return (
-    <View>
-      <Text></Text>
+    <View style={styles.container}>
+      <TextInput style={styles.input} value={value} onChangeText={setValue} />
+      <TouchableHighlight onPress={loadData}>
+        <Text> Rechercher </Text>
+      </TouchableHighlight>
+      <Text> {data.strDrink} </Text>
       <Text> {data.strInstructions} </Text>
-      <Text> Voir les alcools</Text>
-      
-  </View>
+      <Text> {data.strIngredient1} </Text>
+    </View>
   );
 };
 
-export default Cocktails;
+export default Recipe;
