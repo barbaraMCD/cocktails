@@ -9,15 +9,15 @@ const ReadMe = () => {
         <SafeAreaView style={styles.container}>
             <Text style={styles.title}>Read me</Text>
             <View style={styles.sectionContainer}>
-                <Text>G'SOIF</Text>
+                <Text style={styles.underTitle}>G'SOIF</Text>
                 <Text style={styles.text}>G'SOIF is an app about cocktails, browse cocktails check recipe and have fun !</Text>
             </View>
             <View style={styles.sectionContainer}>
-                <Text>Used technologie</Text>
+                <Text style={styles.underTitle}>Used technologie</Text>
                 <Image style={styles.image} source={react} />
             </View>
             <View style={styles.sectionContainer}>
-                <Text>Our dev team</Text>
+                <Text style={styles.underTitle}>Our dev team</Text>
                 <Text style={styles.text}>Alexis Toty, Barbara Michaud, Mélyne Leray, Killian Gay</Text>
             </View>
         </SafeAreaView>

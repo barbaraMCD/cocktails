@@ -12,9 +12,14 @@ const styles = StyleSheet.create({
         marginVertical: 20,
         fontSize: 40,
         textAlign: 'center',
+        color: 'white',
+    },
+    underTitle: {
+        color: 'white',
     },
     text: {
         padding: 10,
+        color: 'white',
     },
     image: {
         width: 100,
