@@ -3,6 +3,7 @@ import {createMaterialBottomTabNavigator} from '@react-navigation/material-botto
 
 import Home from '../views/Home/Home';
 import Recipe from '../views/Recipe/Recipe';
+import WishList from '../views/WishList/WishList';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -11,6 +12,7 @@ const TabNavigator = () => {
     <Tab.Navigator>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Recipe" component={Recipe} />
+      <Tab.Screen name="wishList" component={WishList} />
     </Tab.Navigator>
   );
 };

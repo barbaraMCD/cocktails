@@ -1,4 +1,5 @@
 import UsersReducer from './reducers/users';
+import wishListReducer from './reducers/wishList';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {combineReducers, configureStore} from '@reduxjs/toolkit';
 import {persistReducer, persistStore} from 'redux-persist';
@@ -6,6 +7,7 @@ import thunk from 'redux-thunk';
 
 const rootReducer = combineReducers({
   users: UsersReducer,
+  wishList: wishListReducer,
 });
 
 // on configure la persistance pour lui indiquer de stocker les données dans le AsyncStorage

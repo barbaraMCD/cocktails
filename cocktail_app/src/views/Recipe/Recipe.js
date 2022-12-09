@@ -1,13 +1,12 @@
-import React, {useEffect, useState} from 'react';
-import {Text, TouchableHighlight, View} from 'react-native';
+import React, {useState} from 'react';
+import {Text, TouchableHighlight} from 'react-native';
 import {TextInput} from 'react-native-paper';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import {getRecipe} from '../../helpers/api';
 import styles from './Recipe.styles';
 
 const Recipe = () => {
   const [data, setData] = useState([]);
-  console.log(data);
-
   const [value, setValue] = useState([]);
 
   const loadData = async () => {
@@ -21,7 +20,7 @@ const Recipe = () => {
   // strDrinkThumb : image du cocktail
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <TextInput style={styles.input} value={value} onChangeText={setValue} />
       <TouchableHighlight onPress={loadData}>
         <Text> Rechercher </Text>
@@ -29,7 +28,7 @@ const Recipe = () => {
       <Text> {data.strDrink} </Text>
       <Text> {data.strInstructions} </Text>
       <Text> {data.strIngredient1} </Text>
-    </View>
+    </SafeAreaView>
   );
 };
 
