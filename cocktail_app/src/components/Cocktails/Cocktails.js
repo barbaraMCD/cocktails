@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import {Image, Text, ToastAndroid, TouchableOpacity, View} from 'react-native';
-import {useDispatch, useSelector} from 'react-redux';
-import {addCocktail, removeCocktail} from '../../store/reducers/wishList';
+import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {useDispatch} from 'react-redux';
+import {addCocktail} from '../../store/reducers/wishList';
 import styles from './Cocktails.style';
 
 const Cocktails = ({title, img}) => {
