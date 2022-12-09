@@ -8,16 +8,15 @@ import styles from './Recipe.styles';
 const Recipe = () => {
   const [data, setData] = useState([]);
   const [value, setValue] = useState([]);
+  console.log(data);
+  console.log(data.strDrink);
+  console.log(data.strInstructions);
+  console.log(data.strDrinkThumb); // photo
 
   const loadData = async () => {
     const res = await getRecipe(value);
-    setData(res.drinks);
+    setData(res);
   };
-
-  // strDrink : recuperer le title (margarita)
-  // strInstructions : recuperer la recette
-  // strIngredient1, etc tous les ingrédients
-  // strDrinkThumb : image du cocktail
 
   return (
     <SafeAreaView style={styles.container}>
