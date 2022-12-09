@@ -7,10 +7,16 @@ import styles from './Camera.style'
 const CameraPage = () => {
     const actions = [
         {
-          text: "Images",
-          icon: require("../../assets/images/react-native-logo.png"),
-          name: "bt_accessibility",
-          position: 1
+            text: "Images",
+            icon: require("../../assets/images/react-native-logo.png"),
+            name: "bt_image",
+            position: 1
+        },
+        {
+            text: "Galerie",
+            icon: require("../../assets/images/react-native-logo.png"),
+            name: "bt_galerie",
+            position: 1
         },
     ]
 
@@ -26,10 +32,12 @@ const CameraPage = () => {
             <Text>Camera</Text>
             <FloatingAction
                 actions={actions}
-                onPressItem={() => {
-                    console.log('button pressed');
-                    //launchImageLibrary(options)
-                    launchCamera(options)
+                onPressItem={name => {
+                    if (name == 'bt_image') {
+                        launchCamera(options)
+                    } else {
+                        launchImageLibrary(options)                 
+                    }
                 }}
             />
         </SafeAreaView>
