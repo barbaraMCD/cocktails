@@ -19,14 +19,14 @@ const Home = () => {
       </Text>
       <View style={styles.row}>
         <View style={styles.column}>
-          <Alcohol title={'Gin'} img={gin} />
-          <Alcohol title={'Vodka'} img={vodka} />
-          <Alcohol title={'Tequila'} img={tequila} />
+          <Alcohol style={styles.title} title={'Gin'} img={gin} />
+          <Alcohol style={styles.title} title={'Vodka'} img={vodka} />
+          <Alcohol style={styles.title} title={'Tequila'} img={tequila} />
         </View>
         <View style={styles.column}>
-          <Alcohol title={'Whisky'} img={whisky} />
-          <Alcohol title={'Rhum'} img={rhum} />
-          <Alcohol title={'Cointreau'} img={cointreau} />
+          <Alcohol style={styles.title} title={'Whisky'} img={whisky} />
+          <Alcohol style={styles.title} title={'Rhum'} img={rhum} />
+          <Alcohol style={styles.title} title={'Cointreau'} img={cointreau} />
         </View>
       </View>
     </SafeAreaView>

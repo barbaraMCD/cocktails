@@ -9,8 +9,12 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width / 2,
   },
   title: {
+    fontSize: 28,
+    fontWeight: '600',
+    color: '#03989e',
+    marginBottom: 10,
+    paddingHorizontal: 25,
     textAlign: 'center',
-    marginTop: 30,
   },
   row: {
     flexDirection: 'row',
