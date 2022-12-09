@@ -8,10 +8,10 @@ const Alcohol = ({img, title, goToCocktail}) => {
 
   return (
     <View style={styles.typeOfAlcohol}>
-      <Text> {title} </Text>
+      <Text style={styles.title}> {title} </Text>
       <Image style={styles.image} source={img} />
       <TouchableHighlight onPress={goToCocktail}>
-        <Text> Voir les cocktails </Text>
+        <Text style={styles.title2}> Voir les cocktails </Text>
       </TouchableHighlight>
     </View>
   );

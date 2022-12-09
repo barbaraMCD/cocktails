@@ -10,7 +10,11 @@ const styles = StyleSheet.create({
   },
   title: {
     textAlign: 'center',
-    marginTop: 10,
+    fontSize: 28,
+    fontWeight: '600',
+    color: '#03989e',
+    marginBottom: 10,
+    paddingHorizontal: 25,
   },
   row: {
     flexDirection: 'row',

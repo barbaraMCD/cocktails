@@ -20,7 +20,11 @@ import WishList from '../views/WishList/WishList';
 const AppNavigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Recipe" component={Recipe} />
+      <Stack.Screen
+        options={{headerShown: false}}
+        name="SignIn"
+        component={SignIn}
+      />
       <Stack.Screen
         options={{headerShown: false}}
         name="Tabnav"
@@ -31,15 +35,11 @@ const AppNavigator = () => {
         name="Home"
         component={Home}
       />
+      <Stack.Screen name="Recipe" component={Recipe} />
       <Stack.Screen
         options={{headerShown: false}}
         name="Cocktails"
         component={Cocktails}
-      />
-      <Stack.Screen
-        options={{headerShown: false}}
-        name="SignIn"
-        component={SignIn}
       />
       <Stack.Screen
         options={{headerShown: false}}

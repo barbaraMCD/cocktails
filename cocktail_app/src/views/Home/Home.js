@@ -46,13 +46,20 @@ const Home = () => {
       </Text>
       <View style={styles.row}>
         <View style={styles.column}>
-          <Alcohol title={'gin'} img={gin} goToCocktail={goToGinCocktail} />
           <Alcohol
+            style={styles.title}
+            title={'gin'}
+            img={gin}
+            goToCocktail={goToGinCocktail}
+          />
+          <Alcohol
+            style={styles.title}
             title={'vodka'}
             img={vodka}
             goToCocktail={goToVodkaCocktail}
           />
           <Alcohol
+            style={styles.title}
             title={'tequila'}
             img={tequila}
             goToCocktail={goToTequilaCocktail}
@@ -60,12 +67,19 @@ const Home = () => {
         </View>
         <View style={styles.column}>
           <Alcohol
+            style={styles.title}
             title={'whisky'}
             img={whisky}
             goToCocktail={goToWhiskyCocktail}
           />
-          <Alcohol title={'rhum'} img={rhum} goToCocktail={goToRhumCocktail} />
           <Alcohol
+            style={styles.title}
+            title={'rhum'}
+            img={rhum}
+            goToCocktail={goToRhumCocktail}
+          />
+          <Alcohol
+            style={styles.title}
             title={'cointreau'}
             img={cointreau}
             goToCocktail={goToCointreauCocktail}
