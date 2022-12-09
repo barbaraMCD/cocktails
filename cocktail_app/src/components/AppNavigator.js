@@ -15,6 +15,7 @@ import CointreauView from '../views/CocktailView/CointreauView'
 import Recipe from '../views/Recipe/Recipe'
 import ReadMe from '../views/ReadMe/ReadMe'
 import Cocktails from './Cocktails/Cocktails'
+import CameraPage from '../views/Camera/Camera'
 
 const AppNavigator = () => {
   return (
@@ -43,6 +44,11 @@ const AppNavigator = () => {
         options={{headerShown: false}}
         name="ReadMe"
         component={ReadMe}
+      />
+      <Stack.Screen
+        options={{headerShown: false}}
+        name="CameraPage"
+        component={CameraPage}
       />
       <Stack.Screen name="GinView" component={GinView} />
       <Stack.Screen name="VodkaView" component={VodkaView} />
