@@ -1,20 +1,21 @@
-import * as React from 'react'
-import {createNativeStackNavigator} from '@react-navigation/native-stack'
+import * as React from 'react';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-const Stack = createNativeStackNavigator()
+const Stack = createNativeStackNavigator();
 
-import Home from '../views/Home/Home'
-import TabNavigator from '../components/TabNavigator'
-import SignIn from '../views/SignIn/SignIn'
-import GinView from '../views/CocktailView/GinView'
-import VodkaView from '../views/CocktailView/VodkaView'
-import RhumView from '../views/CocktailView/RhumView'
-import WhiskyView from '../views/CocktailView/WhiskyView'
-import TequilaView from '../views/CocktailView/TequilaView'
-import CointreauView from '../views/CocktailView/CointreauView'
-import Recipe from '../views/Recipe/Recipe'
-import ReadMe from '../views/ReadMe/ReadMe'
-import Cocktails from './Cocktails/Cocktails'
+import Home from '../views/Home/Home';
+import TabNavigator from '../components/TabNavigator';
+import SignIn from '../views/SignIn/SignIn';
+import GinView from '../views/CocktailView/GinView';
+import VodkaView from '../views/CocktailView/VodkaView';
+import RhumView from '../views/CocktailView/RhumView';
+import WhiskyView from '../views/CocktailView/WhiskyView';
+import TequilaView from '../views/CocktailView/TequilaView';
+import CointreauView from '../views/CocktailView/CointreauView';
+import Recipe from '../views/Recipe/Recipe';
+import ReadMe from '../views/ReadMe/ReadMe';
+import Cocktails from './Cocktails/Cocktails';
+import WishList from '../views/WishList/WishList';
 
 const AppNavigator = () => {
   return (
@@ -51,6 +52,7 @@ const AppNavigator = () => {
       <Stack.Screen name="CointreauView" component={CointreauView} />
       <Stack.Screen name="RhumView" component={RhumView} />
       <Stack.Screen name="Recipe" component={Recipe} />
+      <Stack.Screen name="WishLish" component={WishList} />
     </Stack.Navigator>
   );
 };

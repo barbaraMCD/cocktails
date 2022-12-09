@@ -2,6 +2,18 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
+    alignItems: 'center',
+  },
+  text: {
+    padding: 10,
+    shadowColor: '#171717',
+    shadowOffset: {width: -2, height: 4},
+    shadowOpacity: 0.2,
+    backgroundColor: 'white',
+    width: 300,
+    textAlign: 'center',
+  },
+  card: {
     height: 350,
     width: 350,
     backgroundColor: 'white',
